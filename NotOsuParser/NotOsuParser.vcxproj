@@ -22,7 +22,7 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{7a31d9c0-217e-4a4e-870a-a6062e08fc06}</ProjectGuid>
+    <ProjectGuid>{1fa3cd34-930c-48b2-ac64-b7a880f2381a}</ProjectGuid>
     <RootNamespace>NotOsuParser</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>

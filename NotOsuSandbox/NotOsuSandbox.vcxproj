@@ -20,7 +20,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{B9ED0445-9836-4E07-B6F1-E8F9E23E6DAE}</ProjectGuid>
+    <ProjectGuid>{BED29630-15A2-424B-9EA2-5A07BBC24287}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>NotOsuSandbox</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
@@ -78,11 +78,9 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <OutDir>$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -164,7 +162,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NotOsuParser\NotOsuParser.vcxproj">
-      <Project>{7a31d9c0-217e-4a4e-870a-a6062e08fc06}</Project>
+      <Project>{1fa3cd34-930c-48b2-ac64-b7a880f2381a}</Project>
       <Name>NotOsuParser</Name>
     </ProjectReference>
   </ItemGroup>

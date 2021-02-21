@@ -136,12 +136,10 @@ bool MapParser::ParseKvp( std::vector<char>* sectionData, std::string kvpName, v
 		if(std::is_same<T, int>::value || std::is_same<T, bool>::value) {
 			*static_cast< int* >( outValue ) = std::stoi(valueData.data(  ));
 		}
-
-		if(std::is_same<T, const char*>::value || std::is_same<T, std::string>::value) {
+		else if(std::is_same<T, const char*>::value || std::is_same<T, std::string>::value) {
 			static_cast< std::string* >( outValue )->append( valueData.data(  ) );
 		}
-
-		if(std::is_same<T, double>::value) {
+		else if(std::is_same<T, double>::value) {
 			*static_cast< double* >( outValue ) = std::stod( valueData.data(  ));
 		}
 
