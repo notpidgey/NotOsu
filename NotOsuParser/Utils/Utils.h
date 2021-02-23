@@ -1,19 +1,16 @@
 ﻿#pragma once
 #include <string>
 #include <vector>
+#include <sstream>
 
 inline std::vector< std::string> Split(const std::string& str, const std::string& delim)
 {
-	std::vector<std::string> tokens;
-	size_t prev = 0, pos = 0;
-	do
+	std::stringstream ss(str);
+	std::string item;
+	std::vector<std::string> splittedStrings;
+	while (std::getline(ss, item, delim.at(0)))
 	{
-		pos = str.find(delim, prev);
-		if (pos == std::string::npos) pos = str.length();
-		std::string token = str.substr(prev, pos-prev);
-		if (!token.empty()) tokens.push_back(token);
-		prev = pos + delim.length();
+		splittedStrings.push_back(item);
 	}
-	while (pos < str.length() && prev < str.length());
-	return tokens;
+	return splittedStrings;
 }
