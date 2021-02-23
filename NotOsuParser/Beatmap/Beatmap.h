@@ -13,4 +13,6 @@ public:
 	std::vector<HitObject*> HitObjects;
 
 	Beatmap();
+	TimingPoint* GetTimingAtMapTime(int time);
+	TimingPoint* GetParent(TimingPoint* childTimingPoint);
 };
