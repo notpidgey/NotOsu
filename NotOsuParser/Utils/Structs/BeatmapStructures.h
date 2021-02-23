@@ -11,7 +11,7 @@ struct General {
 	int previewTime;
 	int countdown;
 	std::string sampleSet;
-	double stackLeniency;
+	float stackLeniency;
 	int mode;
 	bool letterboxInBreaks;
 	bool storyFireInFront;
@@ -28,10 +28,10 @@ struct General {
 
 struct Editor {
 	std::vector< int > bookmarks;
-	double distanceSpacing;
-	double beatDivisor;
+	float distanceSpacing;
+	float beatDivisor;
 	int gridSize;
-	double timelineZoom;
+	float timelineZoom;
 };
 
 struct Metadata {
@@ -48,12 +48,12 @@ struct Metadata {
 };
 
 struct Difficulty {
-	double hpDrainRate;
-	double circleSize;
-	double overallDifficulty;
-	double approachRate;
-	double sliderMultiplier;
-	double sliderTickRate;
+	float hpDrainRate;
+	float circleSize;
+	float overallDifficulty;
+	float approachRate;
+	float sliderMultiplier;
+	float sliderTickRate;
 };
 
 struct Events {
@@ -64,7 +64,7 @@ struct Events {
 
 struct TimingPoint {
 	int time;
-	double beatLength;
+	float beatLength;
 	int meter;
 	int sampleSet;
 	int sampleIndex;
@@ -93,32 +93,32 @@ enum HitObjectSound {
 };
 
 struct SliderHitObject {
-	char CurveType;
-	std::vector<BeatmapPoint> CurvePoints;
-	int Slides;
-	double Length;
-	std::vector<int> EdgeSounds;
-	std::vector<std::string> EdgeSets;
+	char curveType;
+	std::vector<BeatmapPoint> curvePoints;
+	int slides;
+	float length;
+	std::vector<int> edgeSounds;
+	std::vector<std::string> edgeSets;
 };
 
 struct SpinnerHitObject {
-	int EndTime;
-	POINT Position;
+	int endTime;
+	BeatmapPoint $position;
 };
 
 struct HitObject {
-	POINT Position;
-	int Time;
-	HitObjectType Type;
-	HitObjectSound HitSound;
-	void* ObjectParams;
-	std::vector<int> HitSample;
-
+	BeatmapPoint position;
+	int time;
+	HitObjectType type;
+	HitObjectSound hitSound;
+	void* objectParams;
+	std::vector<int> hitSample;
+	
 	SliderHitObject* GetParamsAsSlider() const {
-		return static_cast< SliderHitObject* >( ObjectParams );
+		return static_cast< SliderHitObject* >( objectParams );
 	}
 
 	SpinnerHitObject* GetParamsAsSpinner() const {
-		return static_cast< SpinnerHitObject* >( ObjectParams );
+		return static_cast< SpinnerHitObject* >( objectParams );
 	}
 };
