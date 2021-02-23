@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 #include <fstream>
 #include <vector>
 #include <iostream>
@@ -10,15 +10,19 @@
 class MapParser
 {
 public:
+    const char* osuDirectory;
     explicit MapParser( const char* osuDirectory );
+    explicit MapParser(  );
     
+    Beatmap* Parse(const char* fullPath);
     Beatmap* Parse( const char* songName, const char* mapName );
+
 private:
-    const char* OsuDirectory;
+    Beatmap* Parse(std::string absolutePath);
     
     bool ReadFile( std::vector<char>* buffer, const char* path );
     bool GetSection( std::vector<char>* mapData, std::vector<char>* sectionData, std::string name );
-    template< class T > bool ParseKvp( std::vector<char>* sectionData, std::string kvpName, void* outValue );
+    template <class T> bool ParseKvp(std::vector<char>* sectionData, std::string kvpName, void* outValue, int extraValuePadding);
     bool ParseNextHitObject( std::vector<char>* sectionData, HitObject*& hitObject ) const;
     bool ParseNextTimingPoint( std::vector<char>* sectionData, TimingPoint*& timingPoint ) const;
 
